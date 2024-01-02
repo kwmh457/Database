@@ -79,12 +79,39 @@ create table `TblProduct` (
 	`prod_date`		DATE
 );
 
-INSERT INTO `TblProduct` VALUES (1001, '냉장고',  800000,  25, 'LG전자', '2022-01-06');
-INSERT INTO `TblProduct` VALUES (1002, '노트북', 1200000, 120, '삼성전자', '2022-01-07');
+INSERT INTO `tblproduct` VALUES (1001, '냉장고',  800000,  25, 'LG전자', '2022-01-06');
+INSERT INTO `tblproduct` VALUES (1002, '노트북', 1200000, 120, '삼성전자', '2022-01-07');
 INSERT INTO `TblProduct` VALUES (1003, '모니터',  350000,  35, 'LG전자', '2023-01-13');
-INSERT INTO `TblProduct` VALUES (1004, '세탁기', 1000000,  80, '삼성전자', '2021-01-01');
+INSERT INTO `tblproduct` VALUES (1004, '세탁기', 1000000,  80, '삼성전자', '2021-01-01');
 INSERT INTO `TblProduct` VALUES (1005, '컴퓨터', 1500000,  20, '삼성전자', '2023-10-01');
-INSERT INTO `TblProduct` VALUES (1006, '휴대폰',  950000, 102, NULL, NULL);
+INSERT INTO `tblproduct` VALUES (1006, '휴대폰',  950000, 102, NULL, NULL);
+
+
+
 
 #실습 2-9
+select *from `Tbluser`;
+select `user_name` from `TblUser`;
+select `user_name`, `user_hp` from `TblUser`;
+select *from `tbluser` where `user_id` = 'p104' or `user_id` = 'p105' ;
+select *from `TblUser` where `user_addr` = '부산시 금정구' ;
+select *from `TblUser` where `user_age` > 30 ;
+select *from `TblUser` where `user_hp` is null;
+update `TblUser` set `user_age`= 42 where `user_id` = 'p104';
+update `TblUser` set `user_addr`= '부산시 진구' where `user_id` = 'p105';
+delete from `tbluser` where `user_id` = 'p103';
+
+select * from `tblproduct`;
+select `prod_name` from `Tblproduct`;
+select `prod_name`, `prod_company`, `prod_price` from `Tblproduct`;
+select *from `TblProduct` where `prod_company` = 'LG전자';
+select *from `TblProduct` where `prod_company` = '삼성전자';
+UPDATE `tblproduct` set
+`prod_company` = '삼성전자',
+`prod_date` = '2024-01-01'
+where
+`prod_no` = 1006;
+
+
+
 
